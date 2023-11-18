@@ -88,24 +88,22 @@ body {
     font-size:22px;
 }
   
-.inputbox {
-    margin-top:30px; 
+.inputbox input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
 }
 
 .login input,
 .signup input {
-  display: block;
-  width: 100%;
-  height: 40px;
-  background-color: #f2f2f2;
-  border: none;
-  margin-bottom: 20px;
-  font-size: 12px;
+    background-color: #f2f2f2;
+    border: none;
+    font-size: 10px;
 }
   
-.Login button,
+.login button,
 .signup button {
-    justify-content: center;
     background-color: #35B729;
     border: none;
     color:white;
@@ -114,8 +112,7 @@ body {
     box-sizing: content-box;
     padding: 10px;
     border-radius: 10px;
-    width: 80px;
-    position: absolute;
+    width: 100px;
     right: 15px;
     bottom: 30px;
     cursor: pointer;

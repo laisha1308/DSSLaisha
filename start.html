@@ -46,13 +46,13 @@
             <div class = "frontbox">
                 <div class = "login">
                     <h2>INICIAR SESIÓN</h2>
-                    <form action = "verification.php" method = "POST">
+                    <form action = "login.php" method = "POST">
 						<div class = "inputbox">
 							<input id = "us" type = "text" name ="userlogin" placeholder = "  USUARIO" required>
 							<input id = "ps" type = "password" name = "passwordlogin" placeholder = "  CONTRASEÑA" required
                                    pattern = "^(?=(.*[a-z]))(?=(.*[A-Z]))(?=(.*\d))(?=(.*[@$!#%*?&]))[A-Za-z\d@$!#%*?&]{8,}$" 
                                    title = "La contraseña debe contener al menos una mayúscula, una minúscula, un número, un carácter especial y tener al menos ocho caracteres."> 
-                            <input type = "text" id = "otp" name = "otp"  placeholder = " CÓDIGO DE VERIFICACIÓN">    
+                            <input type = "text" id = "otp" name = "otp"  placeholder = " CÓDIGO DE VERIFICACIÓN" required>    
 						</div>
                         <button type = "submit">ENVIAR CÓDIGO</button>
                         <button type = "submit" name = "getinto">INGRESAR</button>

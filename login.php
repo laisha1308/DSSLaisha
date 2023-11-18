@@ -14,9 +14,10 @@
     //Inicio de sesion
     $usuario = $_POST['userlogin'];
     $contrasena = md5($_POST['passwordlogin']);
+    $code = $_POST['otp'];
 
     //Consulta
-    $consulta = "SELECT username, passwords FROM users WHERE username = '$usuario' AND passwords = '$contrasena'";
+    $consulta = "SELECT username, passwords, is_verified FROM users WHERE username = '$usuario' AND passwords = '$contrasena' AND is_verified = 1";
 
     //Variable para comparar el resultado
     $resultado = mysqli_query($conexion, $consulta);
@@ -25,7 +26,6 @@
     if($validacion) {
         header("Location: prueba.html");
     } else {
-        echo "$hash";
         header("Location: index.html");
     }
 ?>

@@ -13,9 +13,12 @@
     //Registro
     $usuario = $_POST['user'];
     $contrasena = md5($_POST['password']);
+    $correo = $_POST['email'];
+    // Generar un código de verificación
+    $otp_secret = bin2hex(random_bytes(8));
 
     //Insercion
-    $consulta = "INSERT INTO users (username, passwords) VALUES ('$usuario', '$contrasena');";
+    $consulta = "INSERT INTO users (username, passwords, email, otp_secret) VALUES ('$usuario', '$contrasena', '$correo', '$otp_secret');";
 
     //Variable para comparar el resultado
     $resultado = mysqli_query($conexion, $consulta);
