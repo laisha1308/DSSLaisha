@@ -55,11 +55,11 @@
         // Si el mensaje no fue enviado mostrar el error
         if (!$mail->send()) {
             return $mail->ErrorInfo;
+        } else {
+            $query = "UPDATE users SET is_verified = 1 WHERE username = '$usuario'"; // Cambiar a codigo verificado
+            $resultado2 = mysqli_query($conexion, $query);
+            header("Location: start.html");
         }
-
-        $query = "UPDATE users SET is_verified = 1 WHERE username = '$usuario'"; // Cambiar a codigo verificado
-        $resultado2 = mysqli_query($conexion, $query);
-        header("Location: start.html");
     } else {
         echo "Nombre de usuario o contraseña incorrectos";
         header("Location: index.html");
