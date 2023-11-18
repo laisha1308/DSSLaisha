@@ -17,13 +17,24 @@
     // Generar un código de verificación
     $otp_secret = bin2hex(random_bytes(8));
 
-    //Insercion
-    $consulta = "INSERT INTO users (username, passwords, email, otp_secret) VALUES ('$usuario', '$contrasena', '$correo', '$otp_secret');";
+    if (correoYaRegistrado($conexion, $correo)) {
+        echo "<script>alert('Este correo electrónico ya está registrado. Por favor, utiliza otro.');</script>";
+    } else {
+        //Insercion
+        $consulta = "INSERT INTO users (username, passwords, email, otp_secret) VALUES ('$usuario', '$contrasena', '$correo', '$otp_secret');";
 
-    //Variable para comparar el resultado
-    $resultado = mysqli_query($conexion, $consulta);
+        //Variable para comparar el resultado
+        $resultado = mysqli_query($conexion, $consulta);
 
-    if($resultado) {
-        header("Location: index.html");
+        if($resultado) {
+            header("Location: index.html");
+        }
+    }
+
+    function correoYaRegistrado($conexion, $correo) {
+        $sql = "SELECT email FROM users WHERE email = '$correo'";
+        $resultado2 = mysqli_query($conexion, $sql);
+        // Verificar si se encontraron resultados
+        return $resultado2->num_rows > 0;
     }
 ?>
