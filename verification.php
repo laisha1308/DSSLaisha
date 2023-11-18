@@ -40,8 +40,8 @@
         $mail->isSMTP();  // Indicar que se usará SMTP
         $mail->Host       = 'sandbox.smtp.mailtrap.io';  // Cambiar dirección de servidor SMTP
         $mail->SMTPAuth   = true;  // Habilitar la autenticación SMTP
-        $mail->Username   = '030eee859d8a7a';  // Cambiar nombre de usuario SMTP
-        $mail->Password   = 'd2b485f437dbb7';  // Cambiar contraseña SMTP
+        $mail->Username   = '5cad865d3e7fc8';  // Cambiar nombre de usuario SMTP
+        $mail->Password   = '81624eedd1cd73';  // Cambiar contraseña SMTP
         $mail->SMTPSecure = 'tls';  
         $mail->Port       = 2525;  // Puerto SMTP
 
